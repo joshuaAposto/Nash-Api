@@ -1,5 +1,5 @@
 {
-  "name": "nodejs",
+  "name": "nash-api",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -8,8 +8,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "description": "",
   "dependencies": {
-    "@types/node": "^18.0.6",
     "@xaviabot/fb-downloader": "^1.0.14",
     "api-dylux": "^1.8.5",
     "axios": "^1.7.8",
@@ -29,6 +29,5 @@
     "mal-scraper": "^2.13.2",
     "nexo-aio-downloader": "^1.4.1",
     "ssl-express-www": "^3.2.1"
-  },
-  "description": ""
+  }
 }
