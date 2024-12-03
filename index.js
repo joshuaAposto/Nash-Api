@@ -6,9 +6,7 @@ const helmet = require('helmet');
 const path = require("path");
 const compression = require('compression');
 const log = require("./includes/log");
-const config = require("./config.json");
 
-global.config = config;
 global.api = new Map();
 
 const app = express();
@@ -38,7 +36,7 @@ app.enable('trust proxy');
 app.set("json spaces", 2);
 
 app.use(cors({
-  origin: process.env.ALLOWED_ORIGINS || '*',
+  origin: '*',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
@@ -95,7 +93,7 @@ app.use((err, req, res, next) => {
   });
 });
 
-const PORT = process.env.PORT || global.config.port || 3000;
+const PORT = process.env.PORT || 3000;
 
 const server = app.listen(PORT, () => {
   log.main(`Server is running on port ${PORT}`);
