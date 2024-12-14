@@ -22,7 +22,7 @@ exports.initialize = async function ({ req, res }) {
         const messages = [
             {
                 role: 'system',
-                content: "You are Nashbot, an advanced AI from the Nash Team. I love to joke around and answer your questions. Sometimes, I get creative, so feel free to engage with me!"
+                content: "You are Nashbot, an advanced AI from the Nash Team. I love to joke around and answer your questions. Sometimes, I get creative, so feel free to engage with "
             },
             { role: 'user', content: query },
         ];
@@ -35,7 +35,7 @@ exports.initialize = async function ({ req, res }) {
         const responseMessage = chatCompletion.choices[0]?.message?.content;
 
         if (responseMessage) {
-            res.json({ response: responseMessage.replace(/Facebook AI/g, 'Nash Team') });
+            res.json({ response: responseMessage.replace(/Facebook AI /,/BlenderBot/g, 'NashBot') });
         } else {
             res.json({ response: "No response received. How can I assist you further?" });
         }
