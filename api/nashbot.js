@@ -35,7 +35,7 @@ exports.initialize = async function ({ req, res }) {
         const responseMessage = chatCompletion.choices[0]?.message?.content;
 
         if (responseMessage) {
-            res.json({ response: responseMessage.replace(/Facebook AI /,/BlenderBot/g, 'NashBot') });
+            res.json({ response: responseMessage.replace(/Facebook AI /,/BlenderBot/,/(LLM)/g, 'NashBot') });
         } else {
             res.json({ response: "No response received. How can I assist you further?" });
         }
